@@ -1,0 +1,106 @@
+<div>
+    {{#with person}}
+    <main>
+</div>
+<ul>
+    {{> title data="Name"}}
+    <div>{{name}}</div>
+    <div>{{age}}</div>
+    <div>{{gender}}</div>
+    <hr>
+
+    {{> title data="Address"}}
+    <div>{{address.street}}</div>
+    <div>{{address.city}}</div>
+    <div>{{address.state}}</div>
+    <div>{{address.zip}}</div>
+    <div>{{address.country}}</div>
+    <div>
+        <hr>
+
+        {{> title data="Education"}}
+        {{#each education}}
+        <div><b>{{degree}}</b></div>
+        <div>{{major}}</div>
+        <div>{{university}}</div>
+        <div>{{graduationYear}}</div>
+        {{/each}}
+    </div>
+    <hr>
+
+    {{> title data="WorkExperience"}}
+    {{#each workExperience}}
+    <div><b>{{company}}</b></div>
+    <div>{{title}}</div>
+    <div>{{startDate}} - {{endDate}}</div>
+    <div>
+
+        {{> title data="Responsibilities"}}
+        {{#each responsibilities}}
+        <ol>{{this}}</ol>
+        {{/each}}
+    </div>
+    <div>{{year_founded}}</div>
+    <div>{{industry}}</div>
+    <hr>
+
+
+    {{> title data="Employees"}}
+    {{#each employees}}
+    <div><b>{{name}}</b></div>
+    <div>{{position}}</div>
+    <div>{{department}}</div>
+    <hr>
+
+
+    {{> title data="Projects"}}
+    {{#each projects}}
+    <div><b>{{name}}</b></div>
+    <div>{{description}}</div>
+    <div>{{status}}</div>
+    <hr>
+
+    {{> title data="Teams"}}
+    {{#each teams}}
+    <div><b>{{team_name}}</b></div>
+    <div>{{team_leader.name}}</div>
+    <div>{{team_leader.title}}</div>
+    <div>{{team_leader.email}}</div>
+
+    <div><b>{{name}}</b></div>
+    <div>{{title}}</div>
+    <div>{{email}}</div>
+    <div>{{skills}}</div>
+
+    <br>
+
+    {{#each team_members}}
+    <div><b>{{name}}</b></div>
+    <div>{{title}}</div>
+    <div>{{email}}</div>
+    <div>{{skills}}</div>
+    <hr>
+
+    {{> title data="Projects"}}
+    {{#each projects}}
+    <div><b>{{name}}</b></div>
+    <div>{{description}}</div>
+    <div>{{technologies}}</div>
+
+    {{> title data="Team_members"}}
+    {{#each team_members}}
+
+    <div><b>{{name}}</b></div>
+    <div>{{title}}</div>
+    {{/each}}
+    {{/each}}
+    {{/each}}
+    {{/each}}
+    {{/each}}
+    {{/each}}
+    {{/each}}
+
+</ul>
+</div>
+</main>
+{{/with}}

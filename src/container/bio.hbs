@@ -1,0 +1,77 @@
+{{> title data="Albert Einstein"}}
+<div>{{birthdate}}</div>
+<div>{{birthplace}}</div>
+<div>{{deathdate}}</div>
+<div>{{deathplace}}</div>
+<div>{{nationality}}</div>
+<hr>
+
+{{> title data="Occupation"}}
+{{#each known_for}}
+<ol>{{this}}</ol>
+{{/each}}
+<hr>
+
+{{> title data="Education"}}
+{{#each education}}
+<div>{{degree}}</div>
+<div>{{field}}</div>
+<div>{{institution}}</div>
+<div>{{year}}</div>
+{{/each}}
+<hr>
+
+{{> title data="Notable_publications"}}
+{{#each notable_publications}}
+<div>{{title}}</div>
+<div>{{year}}</div>
+<div>{{publisher}}</div>
+{{/each}}
+<hr>
+
+{{> title data="Partners"}}
+{{#each partners}}
+<div><b>{{name}}</b></div>
+<div>{{relationship}}</div>
+<div>{{years}}</div>
+{{/each}}
+<hr>
+
+{{> title data="Awards"}}
+{{#each awards}}
+<div>{{title}}</div>
+<div>{{year}}</div>
+<div>{{description}}</div>
+{{/each}}
+<hr>
+
+{{> title data="Influences"}}
+{{#each influences}}
+<ol>{{this}}</ol>
+{{/each}}
+<hr>
+
+{{> title data="Influenced"}}
+{{#each influenced}}
+<ol>{{this}}</ol>
+{{/each}}
+<hr>
+
+{{> title data="Quotes"}}
+{{#each quotes}}
+<ol>{{this}}</ol>
+{{/each}}
+<hr>
+
+{{> title data="Major_discoveries"}}
+{{#each major_discoveries}}
+<div>{{title}}</div>
+<div>{{year}}</div>
+<div>{{description}}</div>
+{{/each}}
+
+{{> title data="Contributions"}}
+<div>{{contributions.title}}</div>
+<div>{{contributions.description}}</div>
+<div>{{contributions.year}}</div>
+<div>{{contributions.field}}</div>
