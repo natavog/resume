@@ -1,77 +1,113 @@
 {{> title data="Alberts Einstein"}}
-<div>{{birthdate}}</div>
-<div>{{birthplace}}</div>
-<div>{{deathdate}}</div>
-<div>{{deathplace}}</div>
-<div>{{nationality}}</div>
+<ul>
+    <li>
+        <div>{{birthdate}}</div>
+        <div>{{birthplace}}</div>
+        <div>{{deathdate}}</div>
+        <div>{{deathplace}}</div>
+        <div>{{nationality}}</div>
+    </li>
+</ul>
 <hr>
 
 {{> title data="Occupation"}}
-{{#each known_for}}
-<ol>{{this}}</ol>
-{{/each}}
+<ol>
+    {{#each known_for}}
+    <li>{{this}}</li>
+    {{/each}}
+</ol>
 <hr>
 
 {{> title data="Education"}}
-{{#each education}}
-<div>{{degree}}</div>
-<div>{{field}}</div>
-<div>{{institution}}</div>
-<div>{{year}}</div>
-{{/each}}
+<ul>
+    {{#each education}}
+    <li>
+        <div>{{degree}}</div>
+        <div>{{field}}</div>
+        <div>{{institution}}</div>
+        <div>{{year}}</div>
+    </li>
+    {{/each}}
+</ul>
 <hr>
 
 {{> title data="Notable_publications"}}
-{{#each notable_publications}}
-<div>{{title}}</div>
-<div>{{year}}</div>
-<div>{{publisher}}</div>
-{{/each}}
+<ul>
+    {{#each notable_publications}}
+    <li>
+        <div>{{title}}</div>
+        <div>{{year}}</div>
+        <div>{{publisher}}</div>
+    </li>
+    {{/each}}
+</ul>
 <hr>
 
 {{> title data="Partners"}}
-{{#each partners}}
-<div><b>{{name}}</b></div>
-<div>{{relationship}}</div>
-<div>{{years}}</div>
-{{/each}}
+<ul>
+    {{#each partners}}
+    <li>
+        <div><b>{{name}}</b></div>
+        <div>{{relationship}}</div>
+        <div>{{years}}</div>
+    </li>
+    {{/each}}
+</ul>
 <hr>
 
 {{> title data="Awards"}}
-{{#each awards}}
-<div>{{title}}</div>
-<div>{{year}}</div>
-<div>{{description}}</div>
-{{/each}}
+<ul>
+    {{#each awards}}
+    <li>
+        <div>{{title}}</div>
+        <div>{{year}}</div>
+        <div>{{description}}</div>
+    </li>
+    {{/each}}
+</ul>
 <hr>
 
 {{> title data="Influences"}}
-{{#each influences}}
-<ol>{{this}}</ol>
-{{/each}}
+<ol>
+    {{#each influences}}
+    <li>{{this}}</li>
+    {{/each}}
+</ol>
 <hr>
 
 {{> title data="Influenced"}}
-{{#each influenced}}
-<ol>{{this}}</ol>
-{{/each}}
+<ol>
+    {{#each influenced}}
+    <li>{{this}}</li>
+    {{/each}}
+</ol>
 <hr>
 
 {{> title data="Quotes"}}
-{{#each quotes}}
-<ol>{{this}}</ol>
-{{/each}}
+<ol>
+    {{#each quotes}}
+    <li>{{this}}</li>
+    {{/each}}
+</ol>
 <hr>
 
 {{> title data="Major_discoveries"}}
-{{#each major_discoveries}}
-<div>{{title}}</div>
-<div>{{year}}</div>
-<div>{{description}}</div>
-{{/each}}
+<ul>
+    {{#each major_discoveries}}
+    <li>
+        <div>{{title}}</div>
+        <div>{{year}}</div>
+        <div>{{description}}</div>
+    </li>
+    {{/each}}
+</ul>
 
 {{> title data="Contributions"}}
-<div>{{contributions.title}}</div>
-<div>{{contributions.description}}</div>
-<div>{{contributions.year}}</div>
-<div>{{contributions.field}}</div>
+<ul>
+    <li>
+        <div>{{contributions.title}}</div>
+        <div>{{contributions.description}}</div>
+        <div>{{contributions.year}}</div>
+        <div>{{contributions.field}}</div>
+    </li>
+</ul>
