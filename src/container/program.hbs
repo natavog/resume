@@ -1,0 +1,68 @@
+<div>
+    {{#with program}}
+    <main>
+        {{> title data="Excursion"}}
+        <ul>
+            <li>
+                {{excursion.name}}
+                {{#each excursion.location}}
+            <li>{{this}}</li>
+            {{/each}}
+            {{excursion.date}}
+            </li>
+        </ul>
+        <hr>
+
+        {{> title data="Program"}}
+        <ul>
+            {{#each excursion.program}}
+            <li>
+                <div>{{name}}</div>
+                <div>{{type}}</div>
+                <div>{{duration}}</div>
+                <div>{{details.museum.name}}</div>
+                {{#each details.museum.location}}
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="Exhibits"}}
+            <ul>
+                {{#each details.museum.exhibits}}
+                <li>
+                    <div>{{name}}</div>
+                    <div>{{artist}}</div>
+                    <div>{{description}}</div>
+                    <div>{{audio_guide}}</div>
+                </li>
+                {{/each}}
+            </ul>
+
+            <ul>
+                <div>{{details.guide.name}}</div>
+                <div>{{details.guide.language}}</div>
+                <div>{{details.guide.rating}}</div>
+            </ul>
+
+
+            <ul>
+                <div>{{details.venue.name}}</div>
+                {{#each details.venue.location}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+
+            {{> title data="Performers"}}
+            <ul>
+                {{#each details.performers}}
+                <div>{{name}}</div>
+                <div>{{type}}</div>
+                {{/each}}
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+
+    </main>
+    {{/with}}
+</div>
