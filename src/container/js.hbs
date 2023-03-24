@@ -1,0 +1,51 @@
+{{> title data="JavaScript"}}
+<ul>
+    <li>
+        <div>{{description}}</div>
+        <div>{{history.year}}</div>
+        <div><strong>{{history.founder}}</strong></div>
+
+        <br>
+        <ul>
+            {{#each types}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+
+        <br>
+        <ul>
+            {{#each syntax}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <br>
+        <ul>
+            {{#each features}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <br>
+        <ul>
+            {{#each libraries}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <ul>
+            {{#each tools}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <br>
+        <ul>
+            {{#each community}}
+            <li>{{name}}</li>
+            <li>{{type}}</li>
+            {{/each}}
+        </ul>
+    </li>
+</ul>
+<hr>
