@@ -9,7 +9,7 @@
         {{> title data="Features seats"}}
         {{#each features.interior.seats}}
         <ul>
-            <li>{{this}}</li>
+            <div>{{this}}</div>
             {{/each}}
 
             {{> title data="Features dashboard"}}
@@ -21,6 +21,66 @@
             {{/each}}
         </ul>
 
+        {{> title data="Audio"}}
+        <ul>
+            {{#each features.interior.audio}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
 
+        {{> title data="Exterior"}}
+        <ul>
+            {{> title data="wheels"}}
+            {{#each features.exterior.wheels}}
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="headlights"}}
+            {{#each features.exterior.headlights}}
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="Safety"}}
+
+            {{> title data="airbags"}}
+            {{#each features.safety.airbags}}
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="assistance"}}
+            {{#each features.safety.assistance}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        {{> title data="Engine"}}
+        <ul>
+            <div>{{engine.type}}</div>
+            <div>{{engine.displacement}}</div>
+            <div>{{engine.horsepower}}</div>
+            <div>{{engine.torque}}</div>
+            {{#each engine.transmission}}
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="Fuel_economy"}}
+            <ul>
+                {{#each fuel_economy}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+
+            {{> title data="Price"}}
+            <ul>
+                <div>{{price.base}}</div>
+                <div>{{price.destination}}</div>
+                {{#each price.options}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+
+            {{> title data="Total"}}
+            {{price.total}}
+        </ul>
     </li>
 </ul>
