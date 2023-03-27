@@ -1,0 +1,26 @@
+{{> title data="Toyota"}}
+<ul>
+    <li>
+        <div>{{make}}</div>
+        <div>{{model}}</div>
+        <div>{{year}}</div>
+        <div>{{color}}</div>
+
+        {{> title data="Features seats"}}
+        {{#each features.interior.seats}}
+        <ul>
+            <li>{{this}}</li>
+            {{/each}}
+
+            {{> title data="Features dashboard"}}
+            <li>{{features.interior.dashboard.material}}</li>
+            <li>{{features.interior.dashboard.color}}</li>
+            {{> title data="display"}}
+            {{#each features.interior.dashboard.display}}
+            <div>{{this}}</div>
+            {{/each}}
+        </ul>
+
+
+    </li>
+</ul>
