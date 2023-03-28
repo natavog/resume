@@ -1,0 +1,99 @@
+<main>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="dislay-1">Heading</h1>
+            <ul>
+                <div>{{heading.main.title}}</div>
+                <div>{{heading.main.text}}</div>
+                <br>
+                <p> <button class="btn btn-primary text-center">Open page</button></p>
+                <button class="btn btn-outline-primary">Add to cart</button>
+        </div>
+    </div>
+    </ul>
+
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="dislay-2">Heading second</h1>
+            <ul>
+                <div>{{heading.second.title}}</div>
+                <div>{{heading.second.text}}</div>
+                <br>
+                <p> <button class="btn btn-secondary text-center">Open page</button></p>
+                <button class="btn btn-outline-secondary">Add to cart</button>
+        </div>
+    </div>
+    </ul>
+
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="dislay-3">Heading subblock</h1>
+            <ul>
+                <div>{{heading.subblock.title}}</div>
+                <div>{{heading.subblock.text}}</div>
+                <br>
+                <p> <button class="btn btn-dark">Open page</button></p>
+                <button class="btn btn-outline-dark">Add to cart</button>
+        </div>
+    </div>
+    </ul>
+
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="dislay-1">Nested_display</h1>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        <h1 class="dislay-4">children</h1>
+                        <div>{{nested_display.title}}</div>
+                        <div>{{nested_display.children_display.title}}</div>
+                        <div>{{nested_display.children_display.text}}</div>
+                        <br>
+                        <button class="btn btn-outline-warning">Open</button>
+                </div>
+            </div>
+            <h1 class="dislay-6">Sections</h1>
+            <button class="btn btn-info btn-sm">Learn more</button>
+        </div>
+    </div>
+    </ul>
+
+    <br>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <div class="text-uppercase">{{paragraph.title}}</div>
+            <br>
+            <div class="text-lowercase">{{paragraph.title}}</div>
+            <br>
+            <a href="https://google.com" class="btn btn-info btn-link">
+                Open link page
+            </a>
+            <br>
+            <br>
+
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" class="btn btn-info btn-link">
+                                Github
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://getbootstrap.com/" class="btn btn-info btn-link">
+                                Bootstrap
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
