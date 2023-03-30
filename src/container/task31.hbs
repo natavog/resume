@@ -1,0 +1,102 @@
+<main>
+    {{#each navigation.links}}
+    <a href="{{href}}" class="btn btn-link">
+        {{text}}
+    </a>
+    {{/each}}
+    <a href="{{navigation.button.href}}" class="btn btn-primary"> {{navigation.button.text}}</a>
+    <hr>
+
+    <br>
+    <h1 class="display-1">{{header.title}}</h1>
+    <p>{{header.description}}</p>
+    <a href="{{header.button.link}}" class="btn btn-primary">
+        {{header.button.text}}
+    </a>
+    <br>
+    <br>
+    <hr>
+
+    <br>
+
+    <div class="row">
+        <h2 class="display2">{{city.title}}</h2>
+        <div class="gx-5">
+            {{#each city.cards}}
+            <div class="card">
+                <img class="card-img-top texy-bg-secondary" src="{{picture.src}}" alt="{{picture.alt}}">
+                <div class="card-body">
+                    <h6 class="card-titte">{{title}}</h6>
+                    <p>{{description}}</p>
+                    <br>
+                    <a href="{{button.href}}" class="btn btn-primary">
+                        {{button.text}}
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <table class="table">
+        <thead>{{winner.title}}
+            <tr>
+                <th>
+                    {{#each winner.table.head}}
+                    {{this}}
+                    {{/each}}
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{winner.table.user.place}}</td>
+            </tr>
+            <tr>
+                <td>{{winner.table.user.place}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <h2 class="display2">{{proposition.title}}</h2>
+        <div class="col-6">
+            <div class="card text-bg-warning">
+                <div class="card-header text-center">Our Approach</div>
+                <div class="card-body text-center">
+                    <h6 class="card-titte">Innovative Solutions for Your Business</h6>
+                    <p>We create effective solutions that cater to your business needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card text-bg-warning">
+                <div class="card-header text-center">Our Expertise</div>
+                <div class="card-body text-center">
+                    <h6 class="card-titte">Trusted and Experienced Professionals</h6>
+                    <p>Our team of experts delivers tailored strategies for best results.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+
+    <div class="card-footers text-center">{{footer.title}}</div>
+
+</main>
