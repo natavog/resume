@@ -19,54 +19,84 @@
 
     <br>
 
-    <div class="row">
-        <h2 class="display2">{{city.title}}</h2>
-        <div class="gx-5">
-            {{#each city.cards}}
-            <div class="card">
-                <img class="card-img-top texy-bg-secondary" src="{{picture.src}}" alt="{{picture.alt}}">
-                <div class="card-body">
-                    <h6 class="card-titte">{{title}}</h6>
-                    <p>{{description}}</p>
-                    <br>
-                    <a href="{{button.href}}" class="btn btn-primary">
-                        {{button.text}}
-                    </a>
-                </div>
-                {{/each}}
+
+    <h2 class="display-2">{{city.title}}</h2>
+    <div class="row gx-5">
+        {{#each city.cards}}
+        <div class="card col-6 gy-4">
+            <img class="card-img-top texy-bg-secondary" src="{{picture.src}}" alt="{{picture.alt}}">
+            <div class="card-body">
+                <h6 class="card-titte">{{title}}</h6>
+                <p>{{description}}</p>
+                <br>
+                <a href="{{button.href}}" class="btn btn-primary">
+                    {{button.text}}
+                </a>
             </div>
         </div>
+        {{/each}}
     </div>
+
 
     <hr>
 
+    <h2 class="display-2">{{winner.title}}</h2>
     <table class="table">
-        <thead>{{winner.title}}
+        <thead>
+            {{#each winner.table.head}}
             <tr>
-                <th>
-                    {{#each winner.table.head}}
-                    {{this}}
-                    {{/each}}
-                </th>
+                {{this}}
             </tr>
+            {{/each}}
         </thead>
 
         <tbody>
+            {{#each winner.table.user}}
             <tr>
-                <td>{{winner.table.user.place}}</td>
+                <td>{{place}}</td>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{nickname}}</td>
             </tr>
-            <tr>
-                <td>{{winner.table.user.place}}</td>
-            </tr>
+            {{/each}}
         </tbody>
     </table>
+    <br>
+    <br>
+    <hr>
+
+    <br>
+    <h2 class="display-2">{{gallery.title}}</h2>
+    <br>
+
+    <div class="row">
+        {{#each gallery.cards}}
+        <div class="card col-4">
+            <div class="card-header text-bg-secondary"></div>
+            <div class="card-body">
+                <h6 class="card-titte">{{name}}</h6>
+                <ul class="list-group">
+                    <li class="list-group-items">{{items}}</li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <hr>
 
 
-
-
-
-
-
+    <h2 class="display-3">{{relaxion.title}}</h2>
+    <div class="row gx-5">
+        {{#each relaxion.cards}}
+        <div class="card col-6 gy-5 text-bg-secondary gx-5">
+            <div class="card-header">{{header}}</div>
+            <div class="card-body">
+                <h6 class="card-titte">{{title}}</h6>
+                <div>{{description}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 
 
 
