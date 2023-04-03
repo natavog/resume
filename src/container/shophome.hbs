@@ -1,0 +1,44 @@
+<main>
+
+    <div class="nav">
+        <h1>{{navigation.Logo}}</h1>
+        {{#each navigation.links}}
+        <div class="nav-item">
+            <a href=" {{href}}" class="nav-link">
+                {{text}}
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+
+    <h2 class="display-3 text-center">{{newsBlock.title}}</h2>
+    <div class="row">
+        {{#each newsBlock.cards}}
+        <div class="card col-3">
+            <div class="card-body">
+                <div class="card-title">{{title}}</div>
+                {{description}}
+                {{#if isTop}} {{/if}}
+                {{#if isNew}} {{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <hr class="mt-5">
+
+
+    <diV class="nav">
+        {{#each goodsBlock.tabs}}
+        <div class="nav nav-tabs">
+            <div class="nav-item">
+                {{#if isActive}} {{/if}}
+                {{#if isDisabled}}
+                {{else}} {{text}}
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </diV>
+
+</main>
