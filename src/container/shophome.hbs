@@ -15,12 +15,12 @@
     <h2 class="display-3 text-center">{{newsBlock.title}}</h2>
     <div class="row">
         {{#each newsBlock.cards}}
-        <div class="card col-3">
+        <div class="card col-2 bg-dark text-white my-2 mx-4g">
             <div class="card-body">
-                <div class="card-title">{{title}}</div>
+                <div class="card-title">{{title}} <span class="badge"></span></div>
+                {{#if isTop}} <span class="badge text-bg-success rounded-pill">{{isTop}}</span> {{/if}}
+                {{#if isNew}} <span class="badge text-bg-danger rounded-pill">{{isNew}}</span> {{/if}}
                 {{description}}
-                {{#if isTop}} {{/if}}
-                {{#if isNew}} {{/if}}
             </div>
         </div>
         {{/each}}
@@ -28,17 +28,107 @@
     <hr class="mt-5">
 
 
-    <diV class="nav">
-        {{#each goodsBlock.tabs}}
-        <div class="nav nav-tabs">
+    <section>
+        {{#with goodsBlock}}
+        <diV class="nav nav-tabs mb-5">
+            {{#each tabs}}
             <div class="nav-item">
-                {{#if isActive}} {{/if}}
+                {{#if isActive}}
+                <a href="#" class="nav-link-active">{{text}}</a>
+                {{else}}
                 {{#if isDisabled}}
-                {{else}} {{text}}
+                <a href="#" class="nav-link-disable">{{text}}</a>
+                {{else}}
+                <a href="#" class="nav-link">{{text}}</a>
+                {{/if}}
                 {{/if}}
             </div>
+            {{/each}}
         </div>
-        {{/each}}
-    </diV>
+
+
+        <div class="row">
+            {{#each cards}}
+            <div class="card col-4 mt-2 mb-2">
+                <img class="card-img-top" src="{{image}}">
+                <div class="card-body  my-2 mx-2 py-2">
+                    <p class="card-title display-5">{{title}}</p>
+                    {{#if isHot}} <span class="badge text-bg-primary rounded-pill">{{isHot}}</span>
+                    {{else}}
+                    {{#if isNew}}<span class="badge text-bg-warning rounded-pill">{{isNew}}</span>
+                    {{/if}}
+                    {{/if}}
+                    <div>{{description}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+
+    </section>
+    <br>
+    <hr>
+
+
+    <br>
+    <section>
+        <div class="card bg-dark">
+            <div class="d-flex justify-content-center py-3 ">
+                {{#with subscribe}}
+                <div class="text-white ps-2 mb-3 mb-md-0 me-md-auto">
+                    <h2>{{header}}</h2>
+                    <p>{{description}}</p>
+                </div>
+                <ul class="nav py-3 mb-2">
+                    {{#each buttons}}
+                    <li class="nav-item p-2">
+                        <button href="{{link}}" class="btn btn-primary">{{text}}</button>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+    <br>
+    <hr>
+
+
+
+    <br>
+    <div class="row mt-3 mb-3">
+        <div class="card text-bg-success">
+            <div class="card-body text-center">
+                <div class="card-title display-2 text-center">{{service.title}}</div>
+                <p>{{service.description}}</p>
+                {{#each service.buttons}}
+                <a href="{{link}}">{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+
+
+    <section class="py-7 ps-3">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2">
+                <div class="border-light">
+                    {{#each this}}
+                    <a href="{{this.link}}" class="m-2
+                    text-decoration-none
+                        {{#if @last}}
+                        nav-link disable
+                        {{/if}}
+                   ">{{this.text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
 
 </main>
