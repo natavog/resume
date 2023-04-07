@@ -1,0 +1,119 @@
+<main>
+    <section>
+        <div class="nav">
+            <h1>{{navigation.Logo}}</h1>
+            {{#each navigation.links}}
+            <div class="nav-iten">
+                <a href=" {{href}}" class="nav-link class=" {{#if @last}} nav-link disable {{/if}}">
+                    {{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+
+    <section>
+        <div class="row">
+            {{#each breadcrumb}}
+            <ol class="breadcrumb col-4">
+                <li class="breadcrumb-item">
+                    <a href="{{url}}">{{name}}
+                    </a>
+                </li>
+            </ol>
+            {{/each}}
+
+
+            {{#each productData}}
+            <div class=" card col-6">
+                <div class="card-body">
+                    <h6 class="card-title">{{title}}</h6>
+                    <p>{{about}}</p>
+                    {{#each productData.price}}
+                    <div>{{this}} <span class="badge"></span></div>
+                    {{#if isHot}}<span class="badge text-bg-warning rounded-pill">{{isHot}}</span>{{/if}}
+                    {{#if isNew}}<span class="badge text-bg-primary rounded-pill">{{isNew}}</span>{{/if}}
+                    {{#if isBonus}}<span class="badge text-bg-light rounded-pill">{{isBonus}}</span>{{/if}}
+                </div>
+            </div>
+            {{/each}}
+
+            <div class="card  col-6">
+                <table class=" table">
+                    <thead>
+                        <tr>
+                            {{#each item.head}}
+                        <tr>{{this}}</tr>
+                        {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each item.body}}
+                        <tr>
+                            {{this}}
+                        </tr>
+                        {{/each}}
+                </table>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+
+
+
+    <section>
+        <h2 class="display-2" text-center>{{goodsOtherBlock.title}}</h2>
+        <div class="row">
+            {{#each goodsOtherBlock.cards}}
+            <div class="card col-3 gy-2 mx-2 mb-3">
+                <img class="card-img-top" src="{{image}}">
+                <div class="card-body">
+                    <h6 class="card-title">{{title}} <span class="badge"></span></h6>
+                    {{#if isHot}} <span class="badge text-bg-primary rounded-pill">
+                        {{isHot}}</span> {{/if}}
+                    {{#if idNew}} <span class="badge text-bg-warning rounded-pill">{{idNew}}</span> {{/if}}
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <hr>
+
+    <section>
+        <div class="card mt-3">
+            <div class="card-header display-2 text-center bg-success">
+                {{service.title}}
+                <div class="card-body">
+                    <h6 class="card-title text-center">{{service.description}}</h6>
+                    {{#each service.buttons}}
+                    <a href="{{link}}" class="btn btn-link" alt="{{rel}}">{{text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr>
+    <section class="py-7 ps-3">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2">
+                <div class="border-light">
+                    {{#each this}}
+                    <a href="{{this.link}}" class="m-2
+                    text-decoration-none
+                        {{#if @last}}
+                        nav-link disable
+                        {{/if}}
+                   ">{{this.text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+</main>
