@@ -70,24 +70,25 @@
                     {{/with}}
                 </table>
 
-
-                <div class="list-group">
-                    <div class="list-group-item py-2">
-                        <div class="card-header">{{param.title}}</div>
-                        {{#each param.list}}
-                        <div class="card">
-                            {{this}}
-                            {{/each}}
-                        </div>
-                    </div>
+                {{#with param}}
+                <div class="card my-4">
+                    <div class="card-header">{{title}}</div>
+                    <ul class="list-group list-group-flush">
+                        {{#each list}}
+                        <li class="list-group-item"> {{this}} </li>
+                        {{/each}}
+                    </ul>
                 </div>
-                <br>
+                {{/with}}
 
-                <div class=" alert alert-danger">
-                    {{#if alert.isError}}{{alert.text}} {{/if}}
+
+                {{#with alert}}
+                {{#if isError}}
+                <div class="alert alert-danger" role="alert">
+                    {{text}}
                 </div>
-            </div>
-        </div>
+                {{/if}}
+                {{/with}}
     </section>
 
     <nav>
