@@ -11,53 +11,103 @@
         </div>
     </section>
 
-
     <section>
-        <div class="row">
-            {{#each breadcrumb}}
-            <ol class="breadcrumb col-4">
+        <nav>
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
                 <li class="breadcrumb-item">
-                    <a href="{{url}}">{{name}}
+                    <a classs="breadcrumb-item text-decoration-none" href="{{url}}">{{name}}
                     </a>
                 </li>
+                {{/each}}
             </ol>
-            {{/each}}
+        </nav>
 
-
-            {{#each productData}}
-            <div class=" card col-6">
-                <div class="card-body">
-                    <h6 class="card-title">{{title}}</h6>
-                    <p>{{about}}</p>
-                    {{#each productData.price}}
-                    <div>{{this}} <span class="badge"></span></div>
-                    {{#if isHot}}<span class="badge text-bg-warning rounded-pill">{{isHot}}</span>{{/if}}
-                    {{#if isNew}}<span class="badge text-bg-primary rounded-pill">{{isNew}}</span>{{/if}}
-                    {{#if isBonus}}<span class="badge text-bg-light rounded-pill">{{isBonus}}</span>{{/if}}
+        <div class="row">
+            <div class="col-6">
+                {{#with productData}}
+                <img class="card-img-top" src="{{img}}">
+                <br>
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">{{info.title}}</h6>
+                        <p>{{info.about}}</p>
+                        <div>{{info.price}} <span class="badge"></span></div>
+                        {{#each info.category}}
+                        {{#if isHot}} <span class="badge text-bg-warning rounded-pill">{{name}}</span>
+                        {{else}}
+                        {{#if isNew}} <span class="badge text-bg-primary rounded-pill">{{name}}</span>
+                        {{else}}
+                        {{#if isBonus}} <span class="badge text-bg-light rounded-pill">{{name}}</span>
+                        {{/if}}
+                        {{/if}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
                 </div>
             </div>
-            {{/each}}
 
-            <div class="card  col-6">
-                <table class=" table">
+
+            <div class="col-6">
+                <table class="table table-bordered">
+                    {{#with item}}
                     <thead>
                         <tr>
-                            {{#each item.head}}
-                        <tr>{{this}}</tr>
-                        {{/each}}
+                            {{#each head}}
+                            <th>{{this}}</th>
+                            {{/each}}
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each item.body}}
+                        {{#each body}}
                         <tr>
-                            {{this}}
+                            {{#each this}}
+                            <td>{{this}}</td>
+                            {{/each}}
                         </tr>
                         {{/each}}
+                    </tbody>
+                    {{/with}}
                 </table>
+
+
+                <div class="list-group">
+                    <div class="list-group-item py-2">
+                        <div class="card-header">{{param.title}}</div>
+                        {{#each param.list}}
+                        <div class="card">
+                            {{this}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class=" alert alert-danger">
+                    {{#if alert.isError}}{{alert.text}} {{/if}}
+                </div>
             </div>
-            {{/each}}
         </div>
     </section>
+
+    <nav>
+        {{#each actionList}}
+        {{#if isWarning}}<button class="btn btn-warning">{{name}}</button>
+        {{else}}
+        {{#if isError}}<button class="btn btn-outline text-danger">{{name}}</button>
+        {{else}}
+        {{#if isSuccess}} <button class="btn btn-success">{{name}}</button>
+        {{else}}
+        {{#if isGood}} <button class="btn btn-outline text-success">{{name}}</button>
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/each}}
+    </nav>
+    {{/with}}
+
+
 
 
 
