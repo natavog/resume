@@ -15,7 +15,7 @@
     <h2 class="display-3 text-center">{{newsBlock.title}}</h2>
     <div class="row">
         {{#each newsBlock.cards}}
-        <div class="card col-2 bg-dark text-white my-2 mx-4g">
+        <div class="card col-3 bg-dark text-white my-2 mx-4g">
             <div class="card-body">
                 <div class="card-title">{{title}} <span class="badge"></span></div>
                 {{#if isTop}} <span class="badge text-bg-success rounded-pill">{{isTop}}</span> {{/if}}
@@ -34,10 +34,10 @@
             {{#each tabs}}
             <div class="nav-item">
                 {{#if isActive}}
-                <a href="#" class="nav-link-active">{{text}}</a>
+                <a href="#" class="nav-link active">{{text}}</a>
                 {{else}}
                 {{#if isDisabled}}
-                <a href="#" class="nav-link-disable">{{text}}</a>
+                <a href="#" class="nav-link disable">{{text}}</a>
                 {{else}}
                 <a href="#" class="nav-link">{{text}}</a>
                 {{/if}}
