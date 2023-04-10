@@ -1,18 +1,23 @@
 <main>
     <section>
-        <div class="nav">
-            <h1>{{navigation.Logo}}</h1>
-            <div class="row">
-                <div class="col-4">
-                    {{#each navigation.links}}
-                    <div class="nav-item col-4">
-                        <a href="{{href}}" class="nav-link {{#if @last}} nav-link disable {{/if}}">
-                            {{text}}</a>
-                    </div>
-                </div>
-                {{/each}}
+        <header>
+            {{#with navigation}}
+            <div class="card p-3">
+                <nav class="nav row">
+                    <img class="col" widh="100" height="40" src="{{logo.src}}" alt="logo">
+                    <div class="col-6"></div>
+                    <ul class="col-4">
+                        <li class="d-flex">
+                            {{#each links}}
+                            <a class="nav-link" {{href}}>{{text}}</a>
+                            {{/each}}
+                            <a class="disabled nav-link" href="#">Shophome</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
+            {{/with}}
+        </header>
 
         <nav>
             <ol class="breadcrumb">
@@ -29,7 +34,7 @@
 
         <div class="col-12">
             {{#with newsData}}
-            <img class="card-img-top" src="{{photo}}">
+            <img class="card-img-top img-center" src="{{photo}}">
         </div>
 
         <h1 class="card-header display-3 mt-4">{{head.heading}}
@@ -69,15 +74,17 @@
     <hr>
 
     <section>
+        {{#with service}}
         <div class="card gy-2 gx-2">
             <div class="card-header text-center bg-success text-white">
-                {{service.title}}
-                <p>{{service.description}}</p>
-                {{#each service.buttons}}
+                {{title}}
+                <p>{{description}}</p>
+                {{#each buttons}}
                 <a href="{{link}}" class="btn btn-link text-bg-primary">{{text}}</a>
                 {{/each}}
             </div>
         </div>
+        {{/with}}
     </section>
     <hr>
 
