@@ -1,15 +1,22 @@
 <main>
-    <section>
-        <div class="nav">
-            <h1>{{navigation.Logo}}</h1>
-            {{#each navigation.links}}
-            <div class="nav-iten">
-                <a href=" {{href}}" class="nav-link class=" {{#if @last}} nav-link disable {{/if}}">
-                    {{text}}></a>
-            </div>
-            {{/each}}
+    <header>
+        {{#with navigation}}
+        <div class="card p-2">
+            <nav class="nav row">
+                <img class="col" widh="100" height="40" src="{{logo.src}}" alt="logo">
+                <div class="col-4"></div>
+                <ul class="col-4">
+                    <li class="d-flex">
+                        {{#each links}}
+                        <a class="nav-link" {{href}}>{{text}}</a>
+                        {{/each}}
+                        <a class="disabled nav-link" href="#">Shoporder</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </section>
+        {{/with}}
+    </header>
 
 
     <h2 class="display-3 text-center">{{newsBlock.title}}</h2>
