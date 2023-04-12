@@ -1,15 +1,15 @@
 <main>
-
-    <div class="nav">
-        <h1>{{navigation.Logo}}</h1>
-        {{#each navigation.links}}
-        <div class="nav-item">
-            <a href=" {{href}}" class="nav-link">
-                {{text}}
-            </a>
+    <section>
+        <div class="nav">
+            <h1>{{navigation.Logo}}</h1>
+            {{#each navigation.links}}
+            <div class="nav-iten">
+                <a href=" {{href}}" class="nav-link class=" {{#if @last}} nav-link disable {{/if}}">
+                    {{text}}></a>
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
-    </div>
+    </section>
 
 
     <h2 class="display-3 text-center">{{newsBlock.title}}</h2>
