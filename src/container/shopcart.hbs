@@ -1,0 +1,65 @@
+<main>
+    <header>
+        <div class="card p-3">
+            <nav class="nav row">
+                <ul class="col-4">
+                    <li class="d-flex">
+                        {{#each navigation.links}}
+                        <a class="nav-link" {{href}}>{{text}}</a>
+                        {{/each}}
+                        <a class="disabled nav-link" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </nav>
+            {{#with header}}
+            <h1 class="mb-4">{{title}} </h1>
+            {{#with button}}
+            <button class="col-4 mb-5" class="btn text-muted btn-outline-primary btn-link"
+                href="{{this.link}}">{{this.text}}
+            </button>
+            {{/with}}
+            {{/with}}
+        </div>
+    </header>
+    <hr>
+
+    <div class="col-12">
+        <table class="table">
+            {{#each goodsBlock}}
+            <thead>
+                <tr>
+                    <th>
+                    </th>
+                    {{this}}
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tr>
+                <div class="col-2 mt-2">
+                    <img class="img img top" src="{{image}}">
+                </div>
+                <div class="col-4">
+                    <td>{{name}}</td>
+                </div>
+                <div class="col-2">
+                    <td>{{description}}</td>
+                </div>
+                <div class="col-2">
+                    <td>{{price}}
+                    </td>
+
+                </div>
+                <td>{{amount}}</td>
+                <td>
+                    {{#each buttons}}
+                    <button class="btn" {{#if isPrimary}} {{#if isDanger}} {{/if}} {{/if}}>{{text}}
+                    </button>
+                    {{/each}}
+                </td>
+            </tr>
+        </table>
+        {{/each}}
+    </div>
+</main>
