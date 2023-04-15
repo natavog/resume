@@ -21,45 +21,142 @@
             {{/with}}
         </div>
     </header>
-    <hr>
 
-    <div class="col-12">
-        <table class="table">
-            {{#each goodsBlock}}
-            <thead>
-                <tr>
-                    <th>
-                    </th>
-                    {{this}}
-                </tr>
-            </thead>
-            <tbody>
+    <hr class="mb-5">
 
-            </tbody>
-            <tr>
-                <div class="col-2 mt-2">
-                    <img class="img img top" src="{{image}}">
-                </div>
-                <div class="col-4">
-                    <td>{{name}}</td>
-                </div>
-                <div class="col-2">
-                    <td>{{description}}</td>
-                </div>
-                <div class="col-2">
-                    <td>{{price}}
-                    </td>
 
+    {{#each goodsBlock}}
+    <diV class="card mb-3 col-12">
+        <div class="row">
+            <div class="col-2">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{image}}">
                 </div>
-                <td>{{amount}}</td>
-                <td>
+            </div>
+
+            <div class="col-3">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4>{{name}}</h4>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="card-body">
+                    {{#with price}}
+                    <p>{{title}}:</p>
+                    <strong>{{value}}$</strong>
+                    {{/with}}
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="card-body">
+                    <p>{{amount}}</p>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="card-body ">
                     {{#each buttons}}
-                    <button class="btn" {{#if isPrimary}} {{#if isDanger}} {{/if}} {{/if}}>{{text}}
-                    </button>
+                    {{#if isPrimary}}
+                    <div class="mb-3"> <span class="btn btn-primary ">
+                            {{text}}</span></div>
+                    {{/if}}
+                    {{#if isDanger}}
+                    <div class="mb-3"> <span class="btn btn-outline-danger">{{text}}</span></div>
+                    {{/if}}
                     {{/each}}
-                </td>
-            </tr>
-        </table>
-        {{/each}}
+                </div>
+            </div>
+        </div>
+    </diV>
+    {{/each}}
+
+    <hr class="mt-5">
+
+    <div class="col-12 mt-3">
+        {{#with total}}
+        <h3 class="mt-5">{{title}}</h3>
+        <strong class="display-5 mt-3">{{amount}}</strong>
+        <p class="mt-3">{{delivery}}</p>
+        <div class="col-6 ms-0">
+            {{#each buttons}}
+            {{#if isSuccess}}
+            <div class="mb-3"> <span class="btn btn-success ">
+                    {{text}}</span></div>
+            {{/if}}
+            {{#if isOutline}}
+            <div class="mb-3"> <span class="btn btn-outline-success ">
+                    {{text}}</span></div>
+            {{/if}}
+            {{/each}}
+            {{/with}}
+        </div>
     </div>
+    <hr class="mt-5">
+
+
+    <div class="row g-2">
+        {{#with goodsOtherBlock}}
+        <h1 classs="text-center">{{title}}</h1>
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card">
+                <img src="{{image}}" alt="{{title}}">
+                <div class="card-body">
+                    <h6 class="card-title">{{title}}
+                        {{#if isHot}}
+                        <div class="badge bg-warning rounded-pill">{{isHot}}</div>{{/if}}
+                        {{#if idNew}}
+                        <div class="badge bg-info rounded-pill">{{idNew}}
+                        </div>{{/if}}
+                    </h6>
+                    <p class="text-card">{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+
+    <hr class="mt-5">
+
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="cadr-body">
+            <h2 class="card-title">{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="col-6">
+                <button class="btn btn-link btn-primary" href="{{link}}">{{text}}
+                </button>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+    <hr class="mt-5">
+
+    <section class="py-7 ps-3">
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2">
+                <div class="border-light">
+                    {{#each this}}
+                    <a href="{{this.link}}" class="m-2
+                    text-decoration-none
+                        {{#if @last}}
+                        nav-link disable
+                        {{/if}}
+                   ">{{this.text}}</a>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
 </main>
