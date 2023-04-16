@@ -1,0 +1,20 @@
+<main>
+    <header>
+        {{#with navigation}}
+        <div class="card p-3">
+            <nav class="nav row">
+                <img class="col" widh="100" height="40" src="{{logo.src}}" alt="logo">
+                <div class="col-6"></div>
+                <ul class="col-4">
+                    <li class="d-flex">
+                        {{#each links}}
+                        <a class="nav-link" {{href}}>{{text}}</a>
+                        {{/each}}
+                        <a class="disabled nav-link" href="#">Shophome</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {{/with}}
+    </header>
+</main>

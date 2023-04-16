@@ -1,0 +1,13 @@
+<main>
+    <nav>
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            <li class="breadcrumb-item">
+                <a href="{{url}}"
+                    class="breadcrumb-item text-decoration-none {{#if @last}} nav-link disable {{/if}}">{{name}}
+                </a>
+            </li>
+            {{/each}}
+        </ol>
+    </nav>
+</main>

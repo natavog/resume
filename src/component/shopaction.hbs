@@ -1,0 +1,13 @@
+<main>
+    <section>
+        <div class="card gy-2 gx-2">
+            <div class="card-header text-center bg-success text-white">
+                {{service.title}}
+                <p>{{service.description}}</p>
+                {{#each service.buttons}}
+                <a href="{{link}}" class="btn btn-link text-bg-primary">{{text}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</main>
