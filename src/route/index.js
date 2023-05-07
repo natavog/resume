@@ -1110,5 +1110,60 @@ router.get('/list', function (req, res) {
 })
 // ================================================================
 
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    header: {
+      name: {
+        firstname: 'Nataliia',
+        lastname: 'Dzhus',
+      },
+      description: 'Resume project',
+    },
+    pages: [
+      {
+        name: 'Summary',
+        link: 'http://localhost:3000/Summary/',
+      },
+      {
+        name: 'Program',
+        link: 'http://localhost:3000/program/',
+      },
+      {
+        name: 'Education',
+        link: 'http://localhost:3000/Education/',
+      },
+      {
+        name: 'Work',
+        link: 'http://localhost:3000/Work/',
+      },
+      {
+        name: 'BIO',
+        link: 'http://localhost:3000/bio/',
+      },
+      {
+        name: 'List',
+        link: 'http://localhost:3000/list/',
+      },
+      {
+        name: 'Person',
+        link: 'http://localhost:3000/person/',
+      },
+      {
+        name: 'Skills',
+        link: 'http://localhost:3000/Skills/',
+      },
+    ],
+  })
+})
+// ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router
